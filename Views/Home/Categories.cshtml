@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Categories";
+}
+@model ViewModel
+
+<div class="header">
+    <nav>
+        <a class="nav-link" href="/products">Products</a> 
+        <a class="nav-link" href="/categories">Categories</a>
+    </nav>
+</div>
+
+<div class="wrapper">
+    <div class="left">
+        <h1>New Category</h1>
+        <form action="/categories" method="post">
+            <div class="form-group">
+                <span class="alert-danger" asp-validation-for="Category.Name"></span><br>
+                <label asp-for="Category.Name"></label>
+                <input type="text" asp-for="Category.Name" class="form-control">
+                <br>
+                <button type="submit" class="btn btn-info">Submit</button>
+
+            </div>
+        </form>
+    </div>
+
+    <div class="right">
+        <h1>Existing Categories</h1>
+        <ul>
+            @foreach (Category category in Model.Categories)
+            {
+                <h5> <a href="/category/@category.CategoryId">@category.Name</a> </h5>
+            }
+        </ul>
+    </div>
+</div>

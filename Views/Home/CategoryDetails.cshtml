@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Products";
+}
+@model ViewModel
+
+<div class="header">
+    <nav>
+        <a class="nav-link" href="/products">Products</a> 
+        <a class="nav-link" href="/categories">Categories</a>
+    </nav>
+</div>
+
+<div class="wrapper">
+    <h3 class="ProductName"> @Model.Category.Name </h3>
+
+    <div class="left">
+        <h1>Products</h1>
+        @foreach (var item in Model.Category.CategoryAssociations)
+        {
+            <li>@item.Product.Name</li>
+        }
+
+
+    </div>
+
+    <div class="right">
+        <h1>Add Product</h1>
+        <form action="/category/product" method="post">
+            <label asp-for="Category">Select Product</label>
+            <select class="form-control" asp-for="Association.ProductId" id="">
+                @foreach (var item in Model.CategoriesInProducts)
+                {
+                    <option value="@item.ProductId">@item.Name</option>
+                }
+                </select>
+                <input type="hidden" asp-for="Association.CategoryId" value="@Model.Category.CategoryId">
+            <br>
+            <button type="submit" class="btn btn-info">Add</button>
+
+        </form>
+    </div>
+</div>
+

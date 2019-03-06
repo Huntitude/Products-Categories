@@ -1,0 +1,48 @@
+/*Write all of your CSS here*/
+div.header {
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    font-size: 28px;
+}
+a.nav-link {
+    display: inline-block;
+    vertical-align: top;
+    border-bottom: 2px solid black;
+}
+
+div.wrapper
+{
+    /* border: 1px solid red; */
+    margin-top: 29px;
+}
+div.right, div.left {
+    /* border: 1px solid red; */
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 18px;
+}
+div.right h1, div.left h1, h1.ProductName {
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+ul{
+    padding: 25px;
+    margin: 0;
+}
+li {
+    list-style-type: none;
+    /* text-indent: -5px; */
+}
+li:before {
+    content:" - ";
+}
+a.nav-link{
+    color: black;
+}
+
+div.wrapper h3 {
+    text-align: center;
+}
+
