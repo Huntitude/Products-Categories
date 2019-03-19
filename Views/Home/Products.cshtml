@@ -36,12 +36,16 @@
 
     <div class="right">
         <h1>Existing Products</h1>
-        <ul>
-            @foreach (Product product in Model.Products)
+            @{
+            foreach(Product product in Model.Products)
             {
+                <ul>
                 <h5> <a href="/products/@product.ProductId" data-toggle="tooltip" title="Description: @product.Description.
 Price: @product.Price">@product.Name </a></h5>
+                </ul>
             }
-        </ul>
+        
+            }
+
     </div>
 </div>

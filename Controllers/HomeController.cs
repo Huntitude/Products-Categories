@@ -26,7 +26,7 @@ namespace ProductsAndCategories.Controllers
             //new product <list>. Show All from db.
             ViewModel products = new ViewModel();
             products.Products = dbContext.Products.ToList();
-            return View(products);
+            return View("Products", products);
         }
 
 // ============================================= POST New Product Route
